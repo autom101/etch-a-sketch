@@ -1,5 +1,4 @@
-/* I need a grid of 16x16 divs inside my container div */
-
+@import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
 
 /* Set up a flexbox for my container div so it can hold everything */
 body {
@@ -8,30 +7,68 @@ body {
     margin: 0;
     height: 100vh;
 
+    background-color: slateblue;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+
+h1 {
+    font-family: 'Rouge Script', cursive;
+    font-size: 72px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
 .btn {
-    border-color: gainsboro;
+    border-color: white;
+    border-width: 3px;
     border-radius: 20px;
 
+    transition: all 0.3s ease;
+
+    color: white;
+    background-color: red;
     font-size: 36px;
     font-weight: 800;
     text-align: center;
-    margin-bottom: 50px;
+}
+
+.btn:hover {
+    scale: 1.1;
+
+    border-color: white;
+    border-width: 3px;
+    border-radius: 20px;
+
+    color: white;
+    background-color: aquamarine;
+    font-size: 36px;
+    font-weight: 800;
 }
 
 .container {
-    align-self: center;
-    height: 80%;
-
+    background-color: grey;
     border: 1px solid black;
+    border-radius: 5px;
+    aspect-ratio: 1/1;
+    margin: 20px;
+
     display: flex;
     flex-wrap: wrap;
-    aspect-ratio: 1/1;
+    align-self: center;
+    width: 40%;
 }
 
 .child-div {

@@ -9,8 +9,8 @@ function createDivs(sideLength) {
     for (let i = 0; i < amount; i++) {
         divArray[i] = document.createElement('div');
         divArray[i].classList.add('child-div');
-        divArray[i].style.width = 100/sideLength + '%'; 
-        divArray[i].style.height = 100/sideLength + '%';
+        divArray[i].style.width = 100 / sideLength + '%';
+        divArray[i].style.height = 100 / sideLength + '%';
         container.appendChild(divArray[i]);
     }
 }
@@ -18,16 +18,26 @@ function createDivs(sideLength) {
 function createEventListener(item) {
     item.addEventListener('mouseover', e => {
         item.setAttribute('style', 'background-color: black;');
-        item.style.width = 100/numberOfDivsPerSide + '%';
-        item.style.height = 100/numberOfDivsPerSide + '%';
+        item.style.width = 100 / numberOfDivsPerSide + '%';
+        item.style.height = 100 / numberOfDivsPerSide + '%';
     })
 }
 
 container = document.querySelector('.container');
-button = document.querySelector('button');
+clearButton = document.querySelector('.clear');
+createButton = document.querySelector('.create');
 
-button.addEventListener('click', e => {
-    for (let i = 0; i < numberOfDivsPerSide*numberOfDivsPerSide; i++) {
+clearButton.addEventListener('click', e => {
+    for (let i = 0; i < numberOfDivsPerSide * numberOfDivsPerSide; i++) {
+        divArray[i].remove();
+    }
+
+    createDivs(numberOfDivsPerSide);
+    divArray.forEach(createEventListener);
+})
+
+createButton.addEventListener('click', e => {
+    for (let i = 0; i < numberOfDivsPerSide * numberOfDivsPerSide; i++) {
         divArray[i].remove();
     }
 
