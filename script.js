@@ -4,6 +4,7 @@ let childDivWidth = 0;
 
 let numberOfDivsPerSide = 16;
 
+//Iterate over array, creating a child div at each index
 function createDivs(sideLength) {
     const amount = sideLength * sideLength;
     for (let i = 0; i < amount; i++) {
@@ -15,6 +16,7 @@ function createDivs(sideLength) {
     }
 }
 
+//When mouse hovers over the square, change the background-color to black
 function createEventListener(item) {
     item.addEventListener('mouseover', e => {
         item.setAttribute('style', 'background-color: black;');
@@ -27,6 +29,7 @@ container = document.querySelector('.container');
 clearButton = document.querySelector('.clear');
 createButton = document.querySelector('.create');
 
+//Clear board once button is clicked
 clearButton.addEventListener('click', e => {
     for (let i = 0; i < numberOfDivsPerSide * numberOfDivsPerSide; i++) {
         divArray[i].remove();
@@ -36,6 +39,7 @@ clearButton.addEventListener('click', e => {
     divArray.forEach(createEventListener);
 })
 
+//Clear board and create new board based on user's desired grid size
 createButton.addEventListener('click', e => {
     for (let i = 0; i < numberOfDivsPerSide * numberOfDivsPerSide; i++) {
         divArray[i].remove();
@@ -46,6 +50,6 @@ createButton.addEventListener('click', e => {
     divArray.forEach(createEventListener);
 })
 
+// Initialize the board
 createDivs(numberOfDivsPerSide);
-
 divArray.forEach(createEventListener);
