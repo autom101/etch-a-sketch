@@ -1,6 +1,7 @@
+let divArray = [];
+
 function createDivs(sideLength) {
     const amount = sideLength * sideLength;
-    let divArray = [];
     for (let i = 0; i < amount; i++) {
         divArray[i] = document.createElement('div');
         divArray[i].classList.add('child-div');
@@ -9,6 +10,14 @@ function createDivs(sideLength) {
     }
 }
 
+function createEventListener(item) {
+    item.addEventListener('mouseover', e => {
+        item.setAttribute('style', 'background-color: grey;');
+    })
+}
+
 container = document.querySelector('.container');
 
 createDivs(16);
+
+divArray.forEach(createEventListener);
