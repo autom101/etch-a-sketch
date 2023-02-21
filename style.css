@@ -18,14 +18,13 @@ body {
     border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
 
     justify-content: center;
     align-items: center;
     align-content: center;
 }
 
-.child-divs {
+.child-div {
     height: 6.25%;
     width: 6.25%;
     justify-content: center;
